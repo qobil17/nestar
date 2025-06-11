@@ -1,120 +1,121 @@
 import { Schema } from 'mongoose';
 import { MemberAuthType, MemberStatus, MemberType } from '../libs/enums/member.enum';
 
-const MemberSchema = new Schema({
-    memberType: {
-        type: String,
-        enum: MemberType,
-        default: MemberType.USER,
-    },
-    
-    memberStatus: {
-        type: String,
-        enum: MemberStatus,
-        default: MemberStatus.ACTIVE,
-    },
-    
-    memberAuthType: {
-        type: String,
-        enum: MemberAuthType,
-        default: MemberAuthType.PHONE,
-    },
-    
-    memberPhone: {
-        type: String,
-        index: { unique: true, sparse: true },
-        required: true,
-    },
-    
-   memberNick: {
-        type: String,
-        index: { unique: true, sparse: true },
-        required: true,
-    },
-   
-   memberPassword: {
-        type: String,
-        select: false,
-        required: true,
-    },
-   
-   memberFullName: {
-        type: String,
-    },
-    
-    memberImage: {
-        type: String,
-        defaulte: '',
-    },
-    
-    memberAdress: {
-        type: String,
-    },
+const MemberSchema = new Schema(
+	{
+		memberType: {
+			type: String,
+			enum: MemberType,
+			default: MemberType.USER,
+		},
 
-    memberDesc: {
-        type: String,
-    },
+		memberStatus: {
+			type: String,
+			enum: MemberStatus,
+			default: MemberStatus.ACTIVE,
+		},
 
-    memberProperties: {
-        type: String,
-        default: 0,
-    },
+		memberAuthType: {
+			type: String,
+			enum: MemberAuthType,
+			default: MemberAuthType.PHONE,
+		},
 
-    memberArticles: {
-        type: String,
-        default: 0,
-    },
+		memberPhone: {
+			type: String,
+			index: { unique: true, sparse: true },
+			required: true,
+		},
 
-    memberFollowers: {
-        type: String,
-        default: 0,
-    },
+		memberNick: {
+			type: String,
+			index: { unique: true, sparse: true },
+			required: true,
+		},
 
-    memberFollowing: {
-        type: String,
-        default: 0,
-    },
+		memberPassword: {
+			type: String,
+			select: false,
+			required: true,
+		},
 
-    memberPoints: {
-        type: String,
-        default: 0,
-    },
+		memberFullName: {
+			type: String,
+		},
 
-    memberLikes: {
-        type: String,
-        default: 0,
-    },
+		memberImage: {
+			type: String,
+			default: '',
+		},
 
-    memberViews: {
-        type: String,
-        default: 0,
-    },
+		memberAdress: {
+			type: String,
+		},
 
-    memberComments: {
-        type: String,
-        default: 0,
-    },
+		memberDesc: {
+			type: String,
+		},
 
-    memberRank: {
-        type: String,
-        default: 0,
-    },
-    
-    memberWarnings: {
-        type: String,
-        default: 0,
-    },
+		memberProperties: {
+			type: String,
+			default: 0,
+		},
 
-    memberBlocks: {
-        type: String,
-        default: 0,
-    },
+		memberArticles: {
+			type: String,
+			default: 0,
+		},
 
-    deletedAt: {
-        type: Date,
-    },
-},
-    {timestamps: true, collection: 'members'},
+		memberFollowers: {
+			type: String,
+			default: 0,
+		},
+
+		memberFollowings: {
+			type: Number,
+			default: 0,
+		},
+
+		memberPoints: {
+			type: Number,
+			default: 0,
+		},
+
+		memberLikes: {
+			type: String,
+			default: 0,
+		},
+
+		memberViews: {
+			type: String,
+			default: 0,
+		},
+
+		memberComments: {
+			type: String,
+			default: 0,
+		},
+
+		memberRank: {
+			type: String,
+			default: 0,
+		},
+
+		memberWarnings: {
+			type: String,
+			default: 0,
+		},
+
+		memberBlocks: {
+			type: String,
+			default: 0,
+		},
+
+		deletedAt: {
+			type: Date,
+		},
+	},
+	{ timestamps: true, collection: 'members' },
 );
 
 export default MemberSchema;

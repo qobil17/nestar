@@ -1,14 +1,25 @@
-function printNumbers(): void {
-	let count = 1;
+//TASK-ZM
 
-	const intervalId = setInterval(() => {
-		console.log(count);
-		count++;
-
-		if (count > 5) {
-			clearInterval(intervalId);
-		}
-	}, 5000);
+function reverseInteger(num: number): number {
+	const reversed = num.toString().split('').reverse().join('');
+	return parseInt(reversed);
 }
 
-printNumbers();
+console.log(reverseInteger(123456789));
+
+//TASK-ZK
+
+// function printNumbers(): void {
+// 	let count = 1;
+
+// 	const intervalId = setInterval(() => {
+// 		console.log(count);
+// 		count++;
+
+// 		if (count > 5) {
+// 			clearInterval(intervalId);
+// 		}
+// 	}, 5000);
+// }
+
+// printNumbers();

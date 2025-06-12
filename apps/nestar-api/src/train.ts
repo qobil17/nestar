@@ -1,11 +1,19 @@
-//TASK-ZM
+//TASK-ZL
 
-function reverseInteger(num: number): number {
-	const reversed = num.toString().split('').reverse().join('');
-	return parseInt(reversed);
+function stringToKebab(str: string): string {
+	return str.toLowerCase().trim().replace(/\s+/g, '-');
 }
 
-console.log(reverseInteger(123456789));
+console.log(stringToKebab('Oldiingi Dars Taski Pasda. Uzur'));
+
+//TASK-ZM
+
+// function reverseInteger(num: number): number {
+// 	const reversed = num.toString().split('').reverse().join('');
+// 	return parseInt(reversed);
+// }
+
+// console.log(reverseInteger(123456789));
 
 //TASK-ZK
 

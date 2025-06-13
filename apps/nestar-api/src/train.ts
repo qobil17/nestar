@@ -1,10 +1,10 @@
 //TASK-ZL
 
-function stringToKebab(str: string): string {
-	return str.toLowerCase().trim().replace(/\s+/g, '-');
-}
+// function stringToKebab(str: string): string {
+// 	return str.toLowerCase().trim().replace(/\s+/g, '-');
+// }
 
-console.log(stringToKebab('Oldiingi Dars Taski Pasda. Uzur'));
+// console.log(stringToKebab('Oldiingi Dars Taski Pasda. Uzur'));
 
 //TASK-ZM
 

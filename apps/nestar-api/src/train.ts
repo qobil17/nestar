@@ -1,3 +1,14 @@
+//TASK-ZN
+
+function rotateArray(arr: number[], index: number): number[] {
+	const before = arr.slice(0, index);
+	const after = arr.slice(index);
+	return after.concat(before);
+}
+
+const natija = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(natija);
+
 //TASK-ZL
 
 // function stringToKebab(str: string): string {

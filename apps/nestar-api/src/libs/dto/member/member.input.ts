@@ -1,8 +1,8 @@
 import { Field, InputType, Int } from '@nestjs/graphql';
 import { IsIn, IsNotEmpty, IsOptional, Length, Min } from 'class-validator';
 import { MemberAuthType, MemberType } from '../../enums/member.enum';
-// import { availableAgentsSorts } from '../../config';
-// import { Direction } from '../../enums/common.enum';
+import { availableAgentsSorts } from '../../config';
+import { Direction } from '../../enums/common.enum';
 
 @InputType()
 export class MemberInput {
@@ -42,35 +42,35 @@ export class LoginInput {
 	memberPassword: string;
 }
 
-// @InputType()
-// class AIsearch {
-// 	@IsOptional()
-// 	@Field(() => String, { nullable: true })
-// 	text?: string;
-// }
+@InputType()
+class AIsearch {
+	@IsNotEmpty()
+	@Field(() => String, { nullable: true })
+	text?: string;
+}
 
-// @InputType()
-// export class AgentsInquiry {
-// 	@IsNotEmpty()
-// 	@Min(1)
-// 	@Field(() => Int)
-// 	page: number;
+@InputType()
+export class AgentsInquiry {
+	@IsNotEmpty()
+	@Min(1)
+	@Field(() => Int)
+	page: number;
 
-// 	@IsNotEmpty()
-// 	@Min(1)
-// 	@Field(() => Int)
-// 	limit: number;
+	@IsNotEmpty()
+	@Min(1)
+	@Field(() => Int)
+	limit: number;
 
-// 	@IsOptional()
-// 	@IsIn([availableAgentsSorts])
-// 	@Field(() => String, { nullable: true })
-// 	sort?: string;
+	@IsOptional()
+	@IsIn(availableAgentsSorts)
+	@Field(() => String, { nullable: true })
+	sort?: string;
 
-// @IsOptional()
-// @Field(() => Direction, { nullable: true })
-// directions?: Direction;
+	@IsOptional()
+	@Field(() => Direction, { nullable: true })
+	direction?: Direction;
 
-// 	@IsNotEmpty()
-// 	@Field(() => AIsearch)
-// 	search: AIsearch;
-// }
+	@IsNotEmpty()
+	@Field(() => AIsearch)
+	search: AIsearch;
+}

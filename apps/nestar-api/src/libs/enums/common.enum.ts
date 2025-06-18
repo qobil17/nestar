@@ -22,10 +22,10 @@ export enum Message {
 	NOT_AUTHENTICATED = 'You are not authenticated, please login first!',
 }
 
-// export enum Direction {
-// 	ASC = 1,
-// 	DESC = -1,
-// }
-// registerEnumType(Direction, {
-// 	name: 'Direction',
-// });
+export enum Direction {
+	ASC = 1,
+	DESC = -1,
+}
+registerEnumType(Direction, {
+	name: 'Direction',
+});

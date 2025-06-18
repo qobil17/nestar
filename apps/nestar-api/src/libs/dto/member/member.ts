@@ -70,7 +70,7 @@ export class Member {
 	memberBlocks: number;
 
 	@Field(() => Date, { nullable: true })
-	deletedAt: Date;
+	deletedAt?: Date;
 
 	@Field(() => Date)
 	createdAt: Date;

@@ -3,7 +3,7 @@ import { ObjectId } from 'bson';
 export const availableAgentsSorts = ['createdAt', 'updatedAt', 'memberLikes', 'memberViews', 'memberRank'];
 export const availableMemberSorts = ['createdAt', 'updatedAt', 'memberLikes', 'memberViews'];
 
-/** IMAGE CONFIGURATION (config.js) **/
+/** IMAGE CONFIGURATION (config.js) */
 import { v4 as uuidv4 } from 'uuid';
 import * as path from 'path';
 

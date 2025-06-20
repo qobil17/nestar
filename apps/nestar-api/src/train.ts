@@ -1,21 +1,39 @@
-//TASK-ZO
+//TASK-ZP
 
-function areParenthesesBalanced(input: string): boolean {
-	let balance = 0;
+function areArraysEqual(arr1: any[], arr2: any[]): boolean {
+	const set1 = new Set(arr1);
+	const set2 = new Set(arr2);
 
-	for (const char of input) {
-		if (char === '(') {
-			balance++;
-		} else if (char === ')') {
-			balance--;
-			if (balance < 0) return false;
-		}
+	if (set1.size !== set2.size) return false;
+
+	for (const value of set1) {
+		if (!set2.has(value)) return false;
 	}
 
-	return balance === 0;
+	return true;
 }
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
-console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
+//TASK-ZO
+
+// function areParenthesesBalanced(input: string): boolean {
+// 	let balance = 0;
+
+// 	for (const char of input) {
+// 		if (char === '(') {
+// 			balance++;
+// 		} else if (char === ')') {
+// 			balance--;
+// 			if (balance < 0) return false;
+// 		}
+// 	}
+
+// 	return balance === 0;
+// }
+
+// console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
 
 //TASK-ZN
 

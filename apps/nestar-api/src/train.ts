@@ -1,20 +1,42 @@
-//TASK-ZP
+/**MIT TASKS */
+//TASK-ZQ
 
-function areArraysEqual(arr1: any[], arr2: any[]): boolean {
-	const set1 = new Set(arr1);
-	const set2 = new Set(arr2);
+function findDuplicates(arr: number[]): number[] {
+	const countMap = new Map<number, number>();
+	const result: number[] = [];
 
-	if (set1.size !== set2.size) return false;
-
-	for (const value of set1) {
-		if (!set2.has(value)) return false;
+	for (const num of arr) {
+		countMap.set(num, (countMap.get(num) || 0) + 1);
 	}
 
-	return true;
+	for (const [num, count] of countMap.entries()) {
+		if (count >= 2) {
+			result.push(num);
+		}
+	}
+
+	return result;
 }
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+//TASK-ZP
+
+// function areArraysEqual(arr1: any[], arr2: any[]): boolean {
+// 	const set1 = new Set(arr1);
+// 	const set2 = new Set(arr2);
+
+// 	if (set1.size !== set2.size) return false;
+
+// 	for (const value of set1) {
+// 		if (!set2.has(value)) return false;
+// 	}
+
+// 	return true;
+// }
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
 //TASK-ZO
 

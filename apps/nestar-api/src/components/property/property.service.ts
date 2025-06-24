@@ -257,7 +257,6 @@ export class PropertyService {
 		const result = await this.propertyModel.findOneAndDelete(search).exec();
 		if (!result) throw new InternalServerErrorException(Message.REMOVE_FAILED);
 
-		console.log('Property:', Property);
 		return result;
 	}
 }

@@ -80,13 +80,13 @@ export class PropertyResolver {
 
 	@UseGuards(AuthGuard)
 	@Mutation(() => Property)
-	public async LikeTargetProperty(
+	public async likeTargetProperty(
 		@Args('propertyId') input: string,
 		@AuthMember('_id') memberId: ObjectId,
 	): Promise<Property> {
-		console.log('Mutation: LikeTargetProperty');
+		console.log('Mutation: likeTargetProperty');
 		const LikeRefId = shapeIntoMongoObjectId(input);
-		return await this.propertyService.LikeTargetProperty(memberId, LikeRefId);
+		return await this.propertyService.likeTargetProperty(memberId, LikeRefId);
 	}
 
 	/** ADMIN */

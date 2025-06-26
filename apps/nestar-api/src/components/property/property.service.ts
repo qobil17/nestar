@@ -203,7 +203,7 @@ export class PropertyService {
 		return result[0];
 	}
 
-	public async LikeTargetProperty(memberId: ObjectId, LikeRefId: ObjectId): Promise<Property> {
+	public async likeTargetProperty(memberId: ObjectId, LikeRefId: ObjectId): Promise<Property> {
 		const target: Property = await this.propertyModel
 			.findOne({ _id: LikeRefId, propertyStatus: PropertyStatus.ACTIVE })
 			.exec();

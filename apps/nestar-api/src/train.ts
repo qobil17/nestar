@@ -1,23 +1,41 @@
 /**MIT TASKS */
 
-//TASK-R
+//TASK-ZS
 
-function countNumberAndLetters(input: string): { number: number; letter: number } {
-	let number = 0;
-	let letter = 0;
+function singleNumber(arr: number[]): number {
+	const map = new Map<number, number>();
 
-	for (const char of input) {
-		if (/[0-9]/.test(char)) {
-			number++;
-		} else if (/[a-zA-Z]/.test(char)) {
-			letter++;
-		}
+	for (const num of arr) {
+		map.set(num, (map.get(num) || 0) + 1);
 	}
 
-	return { number, letter };
+	for (const [key, value] of map.entries()) {
+		if (value === 1) return key;
+	}
+
+	throw new Error('No single number found');
 }
 
-console.log(countNumberAndLetters('string152%¥'));
+console.log(singleNumber([4, 2, 1, 2, 1]));
+
+//TASK-R
+
+// function countNumberAndLetters(input: string): { number: number; letter: number } {
+// 	let number = 0;
+// 	let letter = 0;
+
+// 	for (const char of input) {
+// 		if (/[0-9]/.test(char)) {
+// 			number++;
+// 		} else if (/[a-zA-Z]/.test(char)) {
+// 			letter++;
+// 		}
+// 	}
+
+// 	return { number, letter };
+// }
+
+// console.log(countNumberAndLetters('string152%¥'));
 
 //TASK-ZQ
 

@@ -69,7 +69,7 @@ export const lookupAuthMemberFollowed = (input: LookupAuthMemberFollowed) => {
 	const { followerId, followingId } = input;
 	return {
 		$lookup: {
-			from: 'followss',
+			from: 'follows',
 			let: {
 				localFollowerId: followerId,
 				localFollowingId: followingId,
@@ -121,5 +121,14 @@ export const lookupFollowerData = {
 		localField: 'followerId',
 		foreignField: '_id',
 		as: 'followerData',
+	},
+};
+
+export const lookupFavorite = {
+	$lookup: {
+		from: 'members',
+		localField: 'favoriteProperty.memberId',
+		foreignField: '_id',
+		as: 'favoriteProperty.memberData',
 	},
 };

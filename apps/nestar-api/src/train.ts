@@ -1,22 +1,44 @@
 /**MIT TASKS */
 
-//TASK-ZS
+//TASK-ZT
 
-function singleNumber(arr: number[]): number {
-	const map = new Map<number, number>();
+function firstUniqueCharIndex(str: string): number {
+	const charCount: Record<string, number> = {};
 
-	for (const num of arr) {
-		map.set(num, (map.get(num) || 0) + 1);
+	for (const char of str) {
+		charCount[char] = (charCount[char] || 0) + 1;
 	}
 
-	for (const [key, value] of map.entries()) {
-		if (value === 1) return key;
+	for (let i = 0; i < str.length; i++) {
+		if (charCount[str[i]] === 1) {
+			return i;
+		}
 	}
 
-	throw new Error('No single number found');
+	return -1;
 }
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+console.log(firstUniqueCharIndex('stamp'));
+console.log(firstUniqueCharIndex('aabbccdde'));
+console.log(firstUniqueCharIndex('aabbcc'));
+
+//TASK-ZS
+
+// function singleNumber(arr: number[]): number {
+// 	const map = new Map<number, number>();
+
+// 	for (const num of arr) {
+// 		map.set(num, (map.get(num) || 0) + 1);
+// 	}
+
+// 	for (const [key, value] of map.entries()) {
+// 		if (value === 1) return key;
+// 	}
+
+// 	throw new Error('No single number found');
+// }
+
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 
 //TASK-R
 

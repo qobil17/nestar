@@ -2,26 +2,26 @@
 
 //TASK-ZU
 
-function sumOfUnique(nums: number[]): number {
-	const freq: Record<number, number> = {};
+// function sumOfUnique(nums: number[]): number {
+// 	const freq: Record<number, number> = {};
 
-	for (const num of nums) {
-		freq[num] = (freq[num] || 0) + 1;
-	}
+// 	for (const num of nums) {
+// 		freq[num] = (freq[num] || 0) + 1;
+// 	}
 
-	let sum = 0;
-	for (const num in freq) {
-		if (freq[num] === 1) {
-			sum += Number(num);
-		}
-	}
+// 	let sum = 0;
+// 	for (const num in freq) {
+// 		if (freq[num] === 1) {
+// 			sum += Number(num);
+// 		}
+// 	}
 
-	return sum;
-}
+// 	return sum;
+// }
 
-console.log(sumOfUnique([1, 2, 3, 2]));
-console.log(sumOfUnique([1, 1, 1, 1]));
-console.log(sumOfUnique([5, 7, 5, 9]));
+// console.log(sumOfUnique([1, 2, 3, 2]));
+// console.log(sumOfUnique([1, 1, 1, 1]));
+// console.log(sumOfUnique([5, 7, 5, 9]));
 
 //TASK-ZT
 
